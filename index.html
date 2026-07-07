@@ -4,9 +4,19 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/56c5826428.js" crossorigin="anonymous"></script>
+    <script scr="index.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeremy Wilson-Cole</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "HRF8fNargpjD_INU1",
+            });
+        })();
+    </script>
 </head>
 
 <body>
@@ -80,34 +90,63 @@
             <div class="modal__half modal__about">
                 <h3 class="modal__title modal__title--about">Here's some info about me.</h3>
                 <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer</h4>
-                <p class="modal__para">I'm a 37 year old American passionate <b class="red">frontend developer</b> with experience in
+                <p class="modal__para">I'm a 37 year old passionate <b class="red">frontend developer</b> with
+                    experience in
                     creating responsive and
                     <b class="red">user-friendly </b>websites.
                     <br>
-                    I have a strong foundation in <b class="red">HTML, CSS, and JavaScript,</b> and I'm always eager to learn <b class="red">new
-                    technologies</b> and <b class="red">improve my skills.</b>
+                    I have a strong foundation in <b class="red">HTML, CSS, and JavaScript,</b> and I'm always eager to
+                    learn <b class="red">new
+                        technologies</b> and <b class="red">improve </b>my skills.
                 </p>
                 <div class="modal__languages">
                     <figure class="modal__language">
-                        <img class="modal__language--img" src="./assets/html-5.png" alt="HTML Logo" class="modal__languages--img">
+                        <img class="modal__language--img" src="./assets/html-5.png" alt="HTML Logo"
+                            class="modal__languages--img">
                         <span class="language__name">HTML</span>
                     </figure>
                     <figure class="modal__language">
-                        <img class="modal__language--img" src="./assets/css-3.png" alt="CSS Logo" class="modal__languages--img">
+                        <img class="modal__language--img" src="./assets/css-3.png" alt="CSS Logo"
+                            class="modal__languages--img">
                         <span class="language__name">CSS</span>
                     </figure>
                     <figure class="modal__language">
-                        <img class="modal__language--img" src="./assets/js.png" alt="JavaScript Logo" class="modal__languages--img">
+                        <img class="modal__language--img" src="./assets/js.png" alt="JavaScript Logo"
+                            class="modal__languages--img">
                         <span class="language__name">JavaScript</span>
                     </figure>
                 </div>
             </div>
             <div class="modal__half modal__contact">
                 <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
-                <p class="modal__para">
-                    I'm always interested in discussing new opportunities and exciting projects. Feel free to reach out!
-                </p>
+                <h4 class="modal__sub-title modal__sub-title--contact">
+                    I'm currently open to new opportunities.
+                </h4>
+                <form id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label">Name</label>
+                        <input class="input" name="user__name" type="text"></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Email</label>
+                        <input class="input" name="user__email" type="email"></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Message</label>
+                        <textarea class="input" name="message" type="text"></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">
+                        Send it my way
+                    </button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fa-solid fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thank you for the message! Looking forward to speaking to you soon.
+                </div>
             </div>
+            <i class="fa-solid fa-times modal__exit click"></i>
         </div>
     </section>
     <section id="projects">
