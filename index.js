@@ -1,6 +1,24 @@
 // emailjs.send("service_uctllpc","template_n9z5mgy");
 // HRF8fNargpjD_INU1
 function contact(event) {
-    event.preventDefault();
-    console.log('it worked')
+  event.preventDefault();
+  const loading = document.querySelector(".modal__overlay--loading");
+  const success = document.querySelector(".modal__overlay--success");
+  loading.classList += " modal__overlay--visible";
+
+  emailjs
+      .sendForm(
+          'service_uctllpc',
+          'template_n9z5mgy',
+          event.target,
+          'HRF8fNargpjD_INU1'
+      ).then(() => {
+      loading.classList.remove("modal__overlay--visible");
+      success.classList += " modal__overlay--visible";
+  }).catch(() => {
+     loading.classList.remove("modal__overlay--visible");
+     alert(
+        "The email service is temporarliy unavailable. Please contact me directly at Jer35643@gmail.com"
+     ); 
+  })
 }
