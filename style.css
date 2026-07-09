@@ -28,6 +28,7 @@ button {
 
 section {
     background-color: rgb(245, 245, 245);
+    transition: all 300ms ease;
 }
 
 input, textarea {
@@ -143,6 +144,43 @@ nav,
     transition: all 400ms;
 }
 
+.dark-theme .title,
+.dark-theme .section__title,
+.dark-theme .section__sub-title,
+.dark-theme .nav__link--anchor,
+.dark-theme .fa-adjust,
+.dark-theme .header__para
+{
+    color: #ffffff;
+}
+
+.dark-theme section,
+.dark-theme footer {
+    background-color:black;
+}
+
+.dark-theme #nav__logo,
+.dark-theme .footer__logo--img {
+    filter: none;
+}
+
+.dark-theme .scroll__icon {
+    border-color: #ffffff;
+}
+
+.dark-theme .scroll__icon:after,
+.dark-theme .link__hover-effect--black:after {
+    background-color: #ffffff;
+}
+
+.dark-theme .mail__btn {
+    background-color: #ffffff;
+}
+
+.dark-theme .fa-envelope {
+    color: #242424;
+}
+
 /*
 
 LANDING
@@ -195,10 +233,13 @@ LANDING
     border-radius: 50%;
     border: none;
     background-color: #242424;
-    color: #ffffff;
     position: absolute;
     bottom: 32px;
     right: 40px;
+}
+
+.fa-envelope {
+    color: #ffffff;
 }
 
 .scroll {
@@ -254,8 +295,8 @@ NAVIGATION
  }
 
  #nav__logo {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     filter: invert(1);
 }
 
@@ -567,8 +608,8 @@ footer {
 }
 
 .footer__logo--img {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     filter: invert(1);
 }
 
