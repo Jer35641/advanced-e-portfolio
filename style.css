@@ -9,6 +9,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 li {
     list-style-type: none; 
 }
